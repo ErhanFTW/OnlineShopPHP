@@ -58,7 +58,7 @@
     In der Menüleiste können sie auswählen, ob sie alle Vereine oder nur ihren Verein angezeigt haben wollen.<br>
     Wenn sie rechts oben auf Warenkorb klicken gelangen sie zu ihrem Warenkorb und können ihre Bestellung tätigen.<br>
     Darunter finden sie unter Hier alle ihre bisherigen Bestellungen.<br>
-    Viel Spaß beim Einkaufen <br>
+    Viel Spass beim Einkaufen <br>
     Ihr Fanshop-Verkäufer
 
     <?php

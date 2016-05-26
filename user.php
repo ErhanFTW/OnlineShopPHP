@@ -7,7 +7,7 @@ require 'Verbindung.php';
 
 if($_SESSION['usernummer']=="1"){
 //Abrufen aller Userdaten
-$query="Select Nummer,Vorname, Name, Mail,Straße,Hausnummer,PLZ,Ort from user";
+$query="Select Nummer,Vorname, Name, Mail,Strasse,Hausnummer,PLZ,Ort from user";
 $result=mysql_query($query,$conn) or die (mysql_error());
 
 //Wenn keine Benutzer registriert
@@ -17,7 +17,7 @@ if (mysql_num_rows($result)==0){
     exit();
 }
 //Ausgabe aller Userdaten aller User
-echo"<table><tr><td>Nummer</td><td>Vorname</td><td>Nachname</td><td>Email</td><td>Straße</td><td>Hausnummer</td><td>PLZ</td><td>Ort</td></tr>";
+echo"<table><tr><td>Nummer</td><td>Vorname</td><td>Nachname</td><td>Email</td><td>Strasse</td><td>Hausnummer</td><td>PLZ</td><td>Ort</td></tr>";
 while($line=mysql_fetch_array($result)){
     
    echo"<tr><td>$line[0]</td><td>$line[1]</td><td>$line[2]</td>

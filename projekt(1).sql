@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `Name` text COLLATE latin1_german1_ci NOT NULL,
   `Vorname` text COLLATE latin1_german1_ci NOT NULL,
   `Mail` text COLLATE latin1_german1_ci NOT NULL,
-  `Straße` text COLLATE latin1_german1_ci NOT NULL,
+  `Strasse` text COLLATE latin1_german1_ci NOT NULL,
   `Hausnummer` int(11) NOT NULL,
   `PLZ` int(5) NOT NULL,
   `Ort` text COLLATE latin1_german1_ci NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Daten für Tabelle `user`
 --
 
-INSERT INTO `user` (`Name`, `Vorname`, `Mail`, `Straße`, `Hausnummer`, `PLZ`, `Ort`, `Passwort`, `Verein`, `Nummer`) VALUES
+INSERT INTO `user` (`Name`, `Vorname`, `Mail`, `Strasse`, `Hausnummer`, `PLZ`, `Ort`, `Passwort`, `Verein`, `Nummer`) VALUES
 ('Händler', '', 'handler@shop.de', '', 67, 34534, '', 'Zolg123', 'VFB Stuttgart', 1);
 
 -- --------------------------------------------------------
