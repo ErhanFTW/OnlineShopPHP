@@ -1,0 +1,55 @@
+#logo {
+   width:10%;
+   margin:0px;
+   border:4px solid #EE0000;
+   padding:6px;
+   float:left;
+   clear:both;
+  }
+
+  #Kopf{
+   width:100%;
+   float:left;
+   background-color: white;  
+}
+#Rechts{
+    float:right;
+    width:17%;
+}
+#Warenkorb{
+    border:dotted;
+    background-color: yellowgreen;  
+}
+#Bestellung{
+    border:dotted;
+    background-color: lightsalmon;  
+    margin-top: 2%;
+}
+
+#menue {
+   width:100%;
+   text-align: center;
+   background-color: grey;
+}
+#haendler{
+    border:dotted;
+    background-color:lightblue;
+    margin-top:5%;
+       
+}
+
+#Mitte{
+    float:left;
+    width:70%;
+    min-height: 50%;
+      
+}
+#Dort{
+    background-color: yellow;
+}
+#Bayern{
+    background:red;
+}
+#Stuttgart{
+    background-color: white;
+}
