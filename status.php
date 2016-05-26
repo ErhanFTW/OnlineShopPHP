@@ -15,19 +15,19 @@ while ($line = mysql_fetch_array($result)){
     //Erzeugen des Namen des Textfeldes
     $name=$line["Artikelnummer"].$line["Usernummer"];
     
-    //Wurde ein Wert mit dem Namen übertragen    
+    //Wurde ein Wert mit dem Namen Ã¼bertragen
    if(isset($_POST["$name"])) { 
          $g=$_POST["$name"];                  
          
-         //Änderung des Kommentars(Status) in DB Bestellungen
+         //Ã„nderung des Kommentars(Status) in DB Bestellungen
         $query="Update Bestellung set Kommentar='$g' where Artikelnummer='$line[Artikelnummer]' and Usernummer='$line[Usernummer]'";
         $result=mysql_query($query,$conn) or die (mysql_error());
      }
 else{
-echo"Es wurden keine Werte übermittelt.";
+echo"Es wurden keine Werte Ã¼bermittelt.";
 }
 
-//Wenn Übertragung erfolgreich
+//Wenn Ãœbertragung erfolgreich
 if ($result)header("Location: allebestellungen.php");//Weiterleitung zum Warenkorb
 else echo "Fail";}}
 ende();

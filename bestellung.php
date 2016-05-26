@@ -22,26 +22,26 @@ $result3=mysql_query($query3,$conn) or die (mysql_error());
 
 while ($row2 = mysql_fetch_array($result3)) {
        
-//Überprüfung, ob Artikelanzahl vorhanden ist
+//ÃœberprÃ¼fung, ob Artikelanzahl vorhanden ist
 if($row["Anzahl"]>$row2["Bestand"]){
    echo"Ihre Bestellung konnte nicht angenommen werde.<br> ";
-   echo"Sie können leider nur so viele Artikel bestellen, wie wir auf Lager haben.<br>";
-   echo"Ändern sie bitte die Anzahl der bestellten Artikel und versuchen Sie es erneut.<br> ";
+   echo"Sie kÃ¶nnen leider nur so viele Artikel bestellen, wie wir auf Lager haben.<br>";
+   echo"Ã¤ndern sie bitte die Anzahl der bestellten Artikel und versuchen Sie es erneut.<br> ";
    echo"<input type=\"button\" value=\"Zur&uuml;ck\" onClick=\"window.location.href='warenkorbanzeige.php'\">";
    exit;
 }    
-//Übertragung der Daten an DB Bestellung
+//Ãœbertragung der Daten an DB Bestellung
 $query2="Insert INTO bestellung (Artikelnummer, Usernummer, Anzahl, Bestellzeitpunkt, Gesamtpreis, Kommentar) values ('$row[Artikelnummer]', '$_SESSION[usernummer]', '$row[Anzahl]', '$time', '$row[Gesamtpreis]','Wird bearbeitet')";
     $result2=mysql_query($query2,$conn) or die (mysql_error());
     
     //Berechnung des neuen Bestandes
     $bestand=$row2["Bestand"]-$row["Anzahl"];
     
-  //Änderung der Bestandszahl in DB Artikel
+  //Ã„nderung der Bestandszahl in DB Artikel
     $query5="Update artikel set Bestand=$bestand where Artikelnummer='$row[Artikelnummer]'";
     $result5=mysql_query($query5,$conn) or die (mysql_error());
     
-  //Überprüfung, ob erste Ausgabe, um Überschrift auszugeben
+  //ÃœberprÃ¼fung, ob erste Ausgabe, um Ã¼berschrift auszugeben
 if($result2 and $result5){
     if($test=="0"){
         echo"<h1 align=\"center\" >Erfolgreiche Bestellung</h1>";$test++;}
@@ -61,15 +61,15 @@ if($result2 and $result5){
     echo"</table>";
     
 }
-else {echo"Fehler bei der Übertragung";}
+else {echo"Fehler bei der Ãœbertragung";}
 
 
-//Artikel werden aus dem Warenkorb gelöscht
+//Artikel werden aus dem Warenkorb gelÃ¶scht
 $query4="Delete from Warenkorb where Usernummer='$_SESSION[usernummer]'";
 $result4=mysql_query($query4,$conn) or die (mysql_error());
 
 
-if(!$result4){echo"Fehler bei der Löschung der Artikel aus dem Warenkorb.";}
+if(!$result4){echo"Fehler bei der LÃ¶schung der Artikel aus dem Warenkorb.";}
 
 }}
 

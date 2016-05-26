@@ -1,6 +1,6 @@
 <?php
-    //Funktion gibt HTML-Code für den Header aus
-    //als Parameter lÃ¤sst sich ein Wert für den Titel der Seite übergeben.
+    //Funktion gibt HTML-Code fÃ¼r den Header aus
+    //als Parameter lÃ¤sst sich ein Wert fÃ¼r den Titel der Seite Ã¼bergeben.
     function headerAusgabe($titel){
       $doctype="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" ";
       $doctype.="\"http://www.w3.org/TR/html4/transitional.dtd\">\n\r";

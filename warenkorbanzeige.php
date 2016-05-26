@@ -29,7 +29,7 @@ while ($line = mysql_fetch_array($result)) {
           <td><form action=\"warenkorbbearbeiten.php\" method=\"post\">
           <input type=\"text\" name=".$line['Artikelnummer']." value=$line[Anzahl] size=10></td>
           <td>$line[Gesamtpreis]</td>
-          <td><input type=\"submit\" value=\"Ändern\"></form></td>";
+          <td><input type=\"submit\" value=\"Ã¤ndern\"></form></td>";
                          
       echo "</tr><tr>&nbsp;</tr><br><br>";
 
@@ -40,7 +40,7 @@ while ($line = mysql_fetch_array($result)) {
 echo"<tr><td></td><td></td><td></td><td><form action=\"bestellung.php\" method=\"post\"><input type=\"submit\" align=\"center\" value=\"Bestellen\"></td></tr></form>";
 echo"</table><br>";
 
-echo"Möchten Sie einen Artikel aus dem Warenkorb entfernen, tragen Sie entweder eine 0 ein oder Sie lassen das Feld frei und drücken auf Ändern<br>";
+echo"MÃ¶chten Sie einen Artikel aus dem Warenkorb entfernen, tragen Sie entweder eine 0 ein oder Sie lassen das Feld frei und drÃ¼cken auf Ã¤ndern<br>";
 }
 
 echo"<input type=\"button\" value=\"Zur&uuml;ck\" onClick=\"window.location.href='seite.php'\">";
