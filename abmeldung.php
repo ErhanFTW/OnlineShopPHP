@@ -2,7 +2,7 @@
 <?php
 header('Location: anmeldung.html'); //Weiterleitung zur Anmeldung
 
-//Beenden und Löschen der Session
+//Beenden und LÃ¶schen der Session
 session_start();
 session_unset();
 session_destroy();

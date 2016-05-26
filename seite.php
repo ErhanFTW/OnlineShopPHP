@@ -21,7 +21,7 @@
     elseif ($verein == "VFB Stuttgart")
         echo "<img src=\"Bilder/vfb-wappen.jpg\" width=\"100%\">";
 
-    //Abrufen des Lieblingsvereins und Einf�gen des Wappens
+    //Abrufen des Lieblingsvereins und Einfügen des Wappens
     ?>
 </div>
 <div id="Mitte">

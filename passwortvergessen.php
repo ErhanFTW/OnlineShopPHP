@@ -7,7 +7,7 @@ require_once 'headerfunc.inc.php';
 $email = $_POST['email'];
 $nummer = $_POST['hausnummer'];
 
-// Wurden die Felder ausgefüllt
+// Wurden die Felder ausgefÃ¼llt
 if ($email=="" or $nummer==""){
   echo "Eingabe unvollst&auml;ndig.";
   echo "<br><a href='passwortvergessen.html' >Zur&uuml;ck</a>";

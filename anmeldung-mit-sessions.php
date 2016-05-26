@@ -12,7 +12,7 @@
  $anmeldung[0]=$_POST['email'];
  $anmeldung[1]=$_POST['Passwort'];
     
-  //‹berpr¸fen, ob es Leerfelder sind
+  //√úberpr√ºfen, ob es Leerfelder sind
 if ($anmeldung[0]=="" or $anmeldung[1]=="" ){
   echo "Eingabe unvollst&auml;ndig.";
   echo "<br><a href='anmeldung.html' >Zur&uuml;ck</a>";
@@ -38,7 +38,7 @@ else {
  $name=$zeile['Name'];
  $vname=$zeile['Vorname'];
  $email=$zeile['Mail'];
- $straﬂe=$zeile['Straﬂe'];
+ $stra√üe=$zeile['StraÔøΩe'];
  $hausnr=$zeile['Hausnummer'];
  $plz=$zeile['PLZ'];
  $ort=$zeile['Ort'];
@@ -52,7 +52,7 @@ $_SESSION['usernummer'] = $nummer ;
 $_SESSION['name']=$name;
 $_SESSION['vorname']=$vname;
 $_SESSION['email'] = $email ;
-$_SESSION['straﬂe']=$straﬂe;
+$_SESSION['straÔøΩe']=$stra√üe;
 $_SESSION['hausnummer']=$hausnr;
 $_SESSION['plz'] = $plz ;
 $_SESSION['ort']=$ort;
