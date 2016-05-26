@@ -4,8 +4,6 @@
     $titel = "Hauptseite";
     headerausgabe($titel);
     session_start();
-
-
     $usernummer = $_SESSION['usernummer'];
     $verein = $_SESSION['verein'];
 
@@ -30,8 +28,6 @@
 
         ?>
     </div>
-
-
     <div id="menue">
         <?php
         $query2 = "Select name from artikel group by name";
@@ -50,9 +46,7 @@
         mysql_free_result($result2);
 
         ?>
-
     </div>
-
     Herzlich Willkommen in unserem Onlineshop,<br>
     Wenn sie auf ihren Namen klicken, können sie ihre Benutzerdaten ändern und ihr Benutzerkonto löschen.<br>
     In der Menüleiste können sie auswählen, ob sie alle Vereine oder nur ihren Verein angezeigt haben wollen.<br>
@@ -62,10 +56,7 @@
     Ihr Fanshop-Verkäufer
 
     <?php
-
     //Hintergrundfarbe entsprechend zum Lieblingsverein
-
-
     if ($verein == "Borussia Dortmund")
         echo "<div id=\"Dort\">";
     elseif ($verein == "FC Bayern München")
@@ -73,20 +64,16 @@
     else if ($verein == "VFB Stuttgart")
         echo "<div id=\"haupt\" style=\"background-color:white\">";
 
-
     //Abrufen der Artikelkategorien
     $query3 = "Select name from artikel group by name";
     $result3 = mysql_query($query3, $conn) or die(mysql_error());
 
-
     while ($line = mysql_fetch_array($result3)) {
-
         //Wenn Menübutton angeklickt, dann Ausgabe der entsprechenden Artikel
         if (isset($_POST["$line[0]"])) {
             if ($_POST["Verein"] == "Mein") {
                 $where = "and verein='$verein'";
             } else $where = "";
-
             //Abrufen der Artikeldaten
             $query4 = "Select * from artikel where name='$line[0]' $where";
             $result4 = mysql_query($query4, $conn) or die(mysql_error());
@@ -98,7 +85,6 @@
             echo "<table style=\"border:1px;margin:10px;padding:1px;text-align:center;valign:middle;\">";
 
             while ($line = mysql_fetch_array($result4)) {
-
                 //Ausgabe der Artikel
                 echo "<tr><th>Artikelnummer</th><th>Name</th><th>Verein</th><th>Bild</th><th>Preis</th><th>Bestand</th><th>Anzahl</th><th></th> \n\r";
                 echo "<tr>";
@@ -112,8 +98,6 @@
                         <td><input type=\"submit\" value=\"in den Warenkorb\"></td>
                           </form>";
                 echo "</tr>";
-
-
             }
             echo "</table>";
             mysql_free_result($result4);

@@ -14,10 +14,7 @@ if ($_SESSION['usernummer'] == "1") {
     $result = mysql_query($query, $conn) or die (mysql_error());
 
     while ($line = mysql_fetch_array($result)) {
-
         if (isset($_POST[$line["Artikelnummer"]])) { //Wurde ein Wert mit der Artikelnummer übertragen
-
-
             //Empfangen der Daten aus den Textfeldern
             $name = $_POST["Name"];
             $verein = $_POST["Verein"];
@@ -31,25 +28,18 @@ if ($_SESSION['usernummer'] == "1") {
                 echo "<br><a href='warenbestand.php?.SID.' >Zur&uuml;ck</a>";
                 exit();
             }
-
-
-//Änderung der Artikeldaten in der DB
+            //Änderung der Artikeldaten in der DB
             $query3 = "UPDATE artikel SET   Preis='$preis', Name='$name', Verein='$verein', Bild='$bild', Bestand='$bestand' WHERE  Artikelnummer= '$line[Artikelnummer]'";
             $result3 = mysql_query($query3, $conn) or die (mysql_error());
-
         }
-
         //wurde der Button Löschen gedrückt
         if (isset($_POST["Löschen$line[Artikelnummer]"])) {
-
             //löschen des Artikels aus der DB
             $query2 = "Delete  from artikel where Artikelnummer='$line[0]'";
             $result3 = mysql_query($query2, $conn) or die (mysql_error());
         }
-
         //wurde der Button Hinzufügen geklickt
         if (isset($_POST["Add"])) {
-
             //Empfangen der Daten aus den "leeren" Feldern für neuen Artikel
             $artikelnummer = $_POST["Artikelnummer"];
             $name = $_POST["Name"];
@@ -68,7 +58,6 @@ if ($_SESSION['usernummer'] == "1") {
             echo "Fehler bei der Übertragung";
             echo "<input type=\"button\" value=\"Zur&uuml;ck\" onClick=\"window.location.href='warenbestand.php'\">";
         }
-
     }
 }
 

@@ -17,7 +17,6 @@ if ($result) {
 }
 ?>
 <html>
-
 <!--Ausgabe der Userdaten in Textfeldern zum Bearbeiten -->
 <body>
 <form action="kontobearbeiten.php" method="post">
@@ -90,10 +89,7 @@ if ($result) {
                                                       onClick="window.location.href='seite.php?.SID.'"><input
                         type="submit" value="&Auml;ndern"><input type="submit" name="L�schen" value="L&ouml;schen"></td>
                 <td width="240"></td>
-
             </tr>
-
-
         </table>
     </div>
 </form>

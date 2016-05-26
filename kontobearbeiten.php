@@ -48,7 +48,6 @@ if (isset ($_POST["L�schen"])) {
 $query2 = "UPDATE user SET Vorname = '$user[1]', Name = '$user[2]',Passwort =$passwort,Mail='$user[3]', Strasse='$user[4]',  Hausnummer='$user[5]', PLZ='$user[6]', Ort='$user[7]', Verein='$user[8]' WHERE Nummer = '$_SESSION[usernummer]'";
 $result2 = mysql_query($query2, $conn) or die (mysql_error());
 
-
 if ($result2) {
     echo "&Auml;nderung erfolgreich<br>";
     echo "<input type=\"button\" value=\"Zur&uuml;ck\" onClick=\"window.location.href='kontoinformationen.php?.SID.'\">";
@@ -70,7 +69,5 @@ $_SESSION['hausnummer'] = $user[5];
 $_SESSION['plz'] = $user[6];
 $_SESSION['ort'] = $user[7];
 $_SESSION['verein'] = $user[8];
-
 ende();
-
 ?>

@@ -18,20 +18,15 @@ if (!isset($db)) {
 } else {
     $usernummer = $_SESSION['usernummer'];
     //Abgreifen der Usernummer
-
     if (!isset($usernummer)) {
         echo "Sie sind nicht angemeldet";
         echo "<a href=\"anmeldung.html\">Hier gehts zur Anmeldung</a>";
         exit();
-    } //Es wird �berpr�ft, ob die Person angemeldet ist. Wenn nicht dann wird das Script abgebrochen.
-
+    } //Es wird überprüft, ob die Person angemeldet ist. Wenn nicht dann wird das Script abgebrochen.
     else {
-
         while ($line = mysql_fetch_array($result1)) {
-
             if (isset ($_POST["$line[0]"])) {
                 $artikel = $_POST["$line[0]"];
-
                 //Überprüfen ob Artikel ausgewählt wurden
                 if ($artikel == "" or $artikel == "0") {
                     echo "Es wurde leider keine Anzahl eingegeben.";
@@ -48,7 +43,7 @@ if (!isset($db)) {
                         $query3 = "Update warenkorb set Anzahl=$anzahl, Gesamtpreis=$gpreis where Artikelnummer ='$line[0]' and Usernummer =$usernummer";
                         $result3 = mysql_query($query3, $conn) or die(mysql_error());
 
-                        If ($result3) {
+                        if ($result3) {
                             echo " <h1>Erfolgreich in den Warenkorb gelegt!</h1> <br>";
                             echo "Im Warenkorb befand sich schon der ausgesuchte Artikel, deshalb befindet sich der Artikel nun wie folgt im Warenkorbs: <br>
           <table>
@@ -65,11 +60,8 @@ if (!isset($db)) {
                     } else {
                         $query4 = "SELECT Artikelnummer, Name, Verein, Preis FROM artikel where Artikelnummer='$line[0]'";
                         $result4 = mysql_query($query4, $conn) or die(mysql_error());
-
-
 //Abrufen der Daten des Artikels, der ausgewählt wurden
                         while ($row = mysql_fetch_array($result4)) {
-
                             //Einfügen der Daten in die Datenbank Warenkorb
                             $preis = $artikel * $row[3];
                             $query = "INSERT INTO warenkorb (Usernummer, Artikelnummer, Name, Verein, Preis, Anzahl, Gesamtpreis) values ('$usernummer',";
@@ -79,7 +71,6 @@ if (!isset($db)) {
                             $query .= "'" . $row[3] . "',";
                             $query .= "'$artikel',";
                             $query .= "'$preis')";
-
                             $result5 = mysql_query($query, $conn) or die(mysql_error());
 //Ausgabe der Daten, die in den Warenkorb übertragen wurden
                             if ($result5) {
@@ -94,12 +85,9 @@ if (!isset($db)) {
       </table>";
                                 echo "<form> <input type=\"button\" value=\"Weiter einkaufen\" onClick=\"window.location.href='seite.php'\"></form>";
                                 echo "<form> <input type=\"button\" value=\"Weiter zum Warenkorb\" onClick=\"window.location.href='warenkorbanzeige.php'\"></form>";
-
                             } else {
                                 echo "Fehler bei der Übertragung";
                             }
-
-
                         }
                     }
                 }
@@ -107,6 +95,5 @@ if (!isset($db)) {
         }
     }
 }
-
 ende();
 ?>

@@ -34,7 +34,6 @@ if ($_SESSION['usernummer'] == "1") {
         echo "</tr>";
 
         echo " </form>";
-
     }
     echo "</table>";
 
@@ -51,7 +50,6 @@ if ($_SESSION['usernummer'] == "1") {
           <td><input name=\"Bestand\"></td>
           <td><input type=\"submit\" name=\"Add\" value=\"Zu Artikel hinzufügen\"></td>";
     echo "</tr></form></table><br>";
-
 
 //Falls keine Artikel
     if (mysql_num_rows($result) == 0) echo "Es gibt keine Artikel zum Kaufen .";
