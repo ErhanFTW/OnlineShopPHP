@@ -1,0 +1,75 @@
+<!doctype html public "-//W3C//DTD HTML 5.0 //EN">
+<html>
+
+<!-- Das HTML Dokument beginnt -->
+
+<head>
+
+    <!-- Der Kopf des HTML Dokuments -->
+
+    <meta http-equiv="Content-Type" content="text/html" ; charset="ISO-8859-1">
+    <title>Registrierung</title>
+</head>
+<body>
+<h1>Registrierung</h1><br>
+
+<form action="registrierung.php" method="post">
+    <table>
+
+        <tr>
+            <!-- Registrierungs"tabelle"
+
+            Gefordert werden vom Nutzer die Daten:
+            1. Vorname
+            2. Nachname
+            3. E-Mail-Adresse
+            4. Passwort
+            5. Straße
+            6. Hausnummer
+            7. PLZ
+            und
+            8. Ort
+            -->
+
+            <td>Vorname:</td>
+            <td><input name="vorname" type="text" size="15"></td>
+        </tr>
+
+        <tr>
+            <td>Nachname:</td>
+            <td><input name="nachname" type="text" size="15"></td>
+        </tr>
+        <tr>
+            <td>Emailadresse:</td>
+            <td><input name="email" type="email" size="25"></td>
+        </tr>
+        <tr>
+            <td>Passwort(max.10 Zeichen):</td>
+            <td><input name="passwort" size="10" maxlength="10"></td>
+        </tr>
+        <tr>
+            <td>Straße:</td>
+            <td><input name="strasse" type="text" size="15"></td>
+        </tr>
+        <tr>
+            <td>Hausnummer:</td>
+            <td><input name="hausnummer" type="int" maxlength="10" size="10"></td>
+        </tr>
+        <tr>
+            <td>PLZ:</td>
+            <td><input name="plz" type="int" maxlength="5" size="5"></td>
+        </tr>
+        <tr>
+            <td>Ort:</td>
+            <td><input name="ort" type="text" size="15"></td>
+        </tr>
+    </table>
+
+    <!-- Registrierungs"tabelle" -->
+
+    <input type="submit" value="Abschicken">
+
+    <input type="reset" value="Eingabe l&ouml;schen">
+</form>
+</body>
+</html>
