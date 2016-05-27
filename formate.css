@@ -7,7 +7,7 @@
    clear:both;
   }
 
-  #Kopf{
+#Kopf{
    width:100%;
    float:left;
    background-color: white;  
@@ -43,13 +43,4 @@
     width:70%;
     min-height: 50%;
       
-}
-#Dort{
-    background-color: yellow;
-}
-#Bayern{
-    background:red;
-}
-#Stuttgart{
-    background-color: white;
 }

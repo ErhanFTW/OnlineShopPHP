@@ -1,16 +1,25 @@
-<?php session_start();
+<?php
+
+//Beginn des PHP-Dokuments
+
+session_start();
+
+
 require_once 'headerfunc.inc.php';
 $titel = "Kontoinformationen";
 headerausgabe($titel);
 
 //Verbindung herstellen
+
 require 'Verbindung.php';
 
 //Abrufen des Passworts
+
 $query = "Select Passwort from User where Nummer='$_SESSION[usernummer]'";
 $result = mysql_query($query, $conn) or die (mysql_error());
 
 //"Speichern" des Passworts
+
 if ($result) {
     $line = mysql_fetch_array($result);
     $passwort = $line[0];
@@ -18,6 +27,7 @@ if ($result) {
 ?>
 <html>
 <!--Ausgabe der Userdaten in Textfeldern zum Bearbeiten -->
+
 <body>
 <form action="kontobearbeiten.php" method="post">
     <div align="center">
@@ -75,12 +85,6 @@ if ($result) {
                 <td width="120"></td>
                 <td width="120"></td>
                 <td width="240"><?php echo "<input type=\"text\" name=\"PLZ\" value=\"$_SESSION[plz]\" size=\"5\"><input type=\"text\" name=\"Ort\" value=\"$_SESSION[ort]\">"; ?></td>
-            </tr>
-            <tr>
-                <td width="120"></td>
-                <td width="120">Lieblingsverein:</td>
-                <td width="120"></td>
-                <td width="240"><?php echo "<input type=\"text\" name=\"Verein\" value=\"$_SESSION[verein]\">" ?></td>
             </tr>
             <tr>
                 <td width="120"></td>

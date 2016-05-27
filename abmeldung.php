@@ -1,5 +1,8 @@
 
 <?php
+
+//Beginn des PHP-Dokuments
+
 header('Location: anmeldung.html'); //Weiterleitung zur Anmeldung
 
 //Beenden und Löschen der Session

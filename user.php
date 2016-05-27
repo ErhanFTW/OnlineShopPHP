@@ -1,22 +1,31 @@
 <?php
+
+//Beginn des PHP-Dokuments
+
 require_once 'headerfunc.inc.php';
 headerausgabe("Benutzer");
 Session_start();
+
 //Verbindung herstellen
+
 require 'Verbindung.php';
 
 if ($_SESSION['usernummer'] == "1") {
+    
 //Abrufen aller Userdaten
+    
     $query = "Select Nummer,Vorname, Name, Mail,Strasse,Hausnummer,PLZ,Ort from user";
     $result = mysql_query($query, $conn) or die (mysql_error());
 
 //Wenn keine Benutzer registriert
+    
     if (mysql_num_rows($result) == 0) {
         echo "Keine Benutzer registriert.";
         echo "<input type=\"button\" value=\"Zur&uuml;ck\" onClick=\"window.location.href='seite.php?.SID.'\">";
         exit();
     }
 //Ausgabe aller Userdaten aller User
+    
     echo "<table><tr><td>Nummer</td><td>Vorname</td><td>Nachname</td><td>Email</td><td>Strasse</td><td>Hausnummer</td><td>PLZ</td><td>Ort</td></tr>";
     while ($line = mysql_fetch_array($result)) {
 

@@ -1,4 +1,7 @@
 <?php
+
+//Beginn des PHP-Dokuments
+
 require_once 'headerfunc.inc.php';
 session_start();
 
@@ -6,6 +9,7 @@ $titel = "Registrierung";
 headerAusgabe($titel);
 
 //Abgreifen der Informationen
+
 $user = array();
 $user[0] = time();//unix timestamp
 $user[1] = $_POST['vorname'];
@@ -19,6 +23,7 @@ $user[8] = $_POST['ort'];
 
 
 //Überprüfen Leerfeld
+
 if ($user[1] == "" or $user[2] == "" or $user[3] == "" or $user[4] == "" or $user[5] == "" or $user[6] == "" or $user[7] == "" or $user[8] == "") {
     echo "Eingabe unvollst&auml;ndig.";
     echo "<br><a href='registrierung.html' >Zur&uuml;ck</a>";
@@ -26,9 +31,11 @@ if ($user[1] == "" or $user[2] == "" or $user[3] == "" or $user[4] == "" or $use
 } else {
 
     //Verbindung zu DB herstellen
+    
     require 'Verbindung.php';
 
     //Userüberprüfung, wurde der Name+Mail oder nur Mailadresse schon einmal verwendet
+    
     $query = "SELECT * FROM user WHERE " .
         "(vorname='$user[1]') and (name='$user[2]') and (mail='$user[3]') or (mail='$user[3]')";
     $result = mysql_query($query, $conn) or die (mysql_error());
@@ -37,7 +44,8 @@ if ($user[1] == "" or $user[2] == "" or $user[3] == "" or $user[4] == "" or $use
         $db =
 
 //Einfügen der Userdaten in Datenbank User
-        $query = "INSERT INTO user(Nummer, Vorname, Name, Mail, Passwort, Strasse, Hausnummer, PLZ, Ort,  Verein) values ('" . $user[0] . " ',";
+        
+        $query = "INSERT INTO user(Nummer, Vorname, Name, Mail, Passwort, Strasse, Hausnummer, PLZ, Ort) values ('" . $user[0] . " ',";
         $query .= "'" . $user[1] . "',";
         $query .= "'" . $user[2] . "',";
         $query .= "'" . $user[3] . "',";

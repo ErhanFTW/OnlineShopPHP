@@ -1,6 +1,10 @@
 <?php
+
+//Beginn des PHP-Dokuments
+
 //Funktion gibt HTML-Code für den Header aus
 //als Parameter lässt sich ein Wert für den Titel der Seite übergeben.
+
 function headerAusgabe($titel)
 {
     $doctype = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" ";

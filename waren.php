@@ -1,5 +1,8 @@
 <?php
 
+//Beginn des PHP-Dokuments
+
+
 //Abrufen der Usernummer
 $usernummer = $_SESSION["usernummer"];
 
